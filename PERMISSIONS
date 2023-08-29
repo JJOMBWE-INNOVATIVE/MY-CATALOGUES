@@ -1,0 +1,47 @@
+STEP ONE 
+FIRST GET PERMISSION FROM ANDROID MANIFEST.xml
+ <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32"
+        tools:ignore="ScopedStorage" />
+
+
+STEP TWO
+MAKE SURE YOUR PROVIDER FILES ARE IN LINE
+ <provider
+            android:authorities="com.example.recycle.file-provider"
+            android:name="androidx.core.content.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+
+STEP THREE 
+MAKE SURE YOUR file_paths ARE IN LINE
+
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <files-path
+        name="my_images"
+        path="Pictures" />
+</paths>
+
+
+STEP FOUR
+ADD THE CODE IN THE Floating.kt in this folder
+
+
+
+
+
+
+
+
